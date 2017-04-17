@@ -14,9 +14,14 @@
 
 ### SqlServer
 + INSERT INTO SELECT语句
-  + 语句形式为：Insert into Table2(field1,field2,...) select value1,value2,... from Table1,要求目标表Table2必须存在，由于目标表Table2已经存在，所以我们除了插入源表Table1的字段外，还可以插入`常量`。
+```
+Insert into Table2(field1,field2,...) select value1,value2,... from Table1
+```
+要求目标表Table2必须存在，由于目标表Table2已经存在，所以我们除了插入源表Table1的字段外，还可以插入`常量`。
 + update 多条语句
-  + update 表1 set 字段=变量 from 表2 b where b.字段=表1.字段
+```
+update 表1 set 字段=变量 from 表2 b where b.字段=表1.字段
+```
 + output输出字段，跟触发器相似
   + 例子：<br>
 ```DECLARE @TMP TABLE(ID INT) 
