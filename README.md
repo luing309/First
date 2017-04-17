@@ -14,17 +14,18 @@
 
 ### SqlServer
 + INSERT INTO SELECT语句
-```
+```sql
 Insert into Table2(field1,field2,...) select value1,value2,... from Table1
 ```
 要求目标表Table2必须存在，由于目标表Table2已经存在，所以我们除了插入源表Table1的字段外，还可以插入`常量`。
 + update 多条语句
-```
+```sql
 update 表1 set 字段=变量 from 表2 b where b.字段=表1.字段
 ```
 + output输出字段，跟触发器相似
   + 例子：<br>
-```DECLARE @TMP TABLE(ID INT) 
+```sql
+DECLARE @TMP TABLE(ID INT) 
 update FKPrizesQuiz set winmoney='999' OUTPUT INSERTED.ID  
 INTO @TMP where winmoney is not null
 DECLARE @TMPT TABLE([OPENID] [varchar](255),[NUM] INT) 
@@ -37,6 +38,13 @@ from @TMPT b
 where b.OPENID=Fans_VipData.openId
 ```
 + 复制表
-```
+```sql
 SELECT * INTO 新表 FROM 旧表（复制表）
+```
++ sql like的用法 
+```csharp
+pr.Add(new SqlParameter("@phone", phone.Value));
+```
+```sql
+sql += " and phone like '%'+@phone+'%' ";
 ```
