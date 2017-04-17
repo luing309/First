@@ -1,2 +1,4 @@
-hello 
-this is my first repository
+EF
+LINQ
+web api
+MVC
